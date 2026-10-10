@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,5 +28,12 @@ public class GameManager : MonoBehaviour
     {
         get { return _basePlayer; }
         set { _basePlayer = value; }
+    }
+
+    private FirstPersonModel _firstPersonPlayer;
+    public FirstPersonModel FirstPersonPlayer
+    {
+        get { return _firstPersonPlayer; }
+        set { _firstPersonPlayer = value; }
     }
 }
