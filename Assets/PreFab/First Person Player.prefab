@@ -954,6 +954,7 @@ MonoBehaviour:
     m_Bits: 1073741824
   _jumpForce: 7.5
   _moveSpeed: 3.5
+  _sprintModifier: 3.5
 --- !u!1 &3144119998693680909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,12 +1034,12 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0c5085bfaae138d429402f74532ab16c, type: 3}
   m_Controller: {fileID: 9100000, guid: b0fcd0276904ba14b8b2db6c175bc50a, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

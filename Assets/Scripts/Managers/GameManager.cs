@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,5 +37,10 @@ public class GameManager : MonoBehaviour
     {
         get { return _firstPersonPlayer; }
         set { _firstPersonPlayer = value; }
+    }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
     }
 }
