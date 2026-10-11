@@ -96,6 +96,14 @@ public class FirstPersonModel : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (transform.position.y <= -50.0f)
+        {
+            transform.position = Vector3.zero;
+        }
+    }
+
     private bool IsGrounded()
     {
         _groundOffsetPos = new Vector3(transform.position.x, transform.position.y + _groundRayDistance / 4, transform.position.z);
