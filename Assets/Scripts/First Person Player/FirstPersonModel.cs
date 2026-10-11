@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -22,10 +20,17 @@ public class FirstPersonModel : MonoBehaviour
     [SerializeField] private LayerMask _groundLayerMask;
     [SerializeField] private float _jumpForce = 7.5f;
     [SerializeField] private float _moveSpeed = 3.5f;
+    [Range(1.25f, 5.0f)][SerializeField] private float _sprintModifier = 3.5f;
 
-    private bool _isOnGround = false;
+    private bool _isOnGround = false, _isSprinting = false;
     public bool IsOnGround { get { return _isOnGround; } set { _isOnGround = value; } }
-    private float _mouseX = 0.0f;
+    public bool IsSprinting { get { return _isSprinting; } set { _isSprinting = value; } }
+    private float _mouseX = 0.0f, _baseSprintModifier = 1.0f, _actualSprintModifier = 1.0f;
+    public float SprintModifier
+    {
+        get { return _actualSprintModifier; }
+        set { _actualSprintModifier = value; }
+    }
     
     private FirstPersonCamera _camera;
     private FirstPersonView _view;
@@ -59,6 +64,17 @@ public class FirstPersonModel : MonoBehaviour
 
     private void Update()
     {
+        if (_isSprinting)
+        {
+            _actualSprintModifier = _sprintModifier;
+            _view.SetTimeScale(_sprintModifier);
+        }
+        else
+        {
+            _actualSprintModifier = _baseSprintModifier;
+            _view.SetTimeScale(_baseSprintModifier);
+        }
+        
         if (_mouseInput.x != 0.0f || _mouseInput.y != 0.0f)
         {
             Rotate(_mouseInput);
@@ -101,7 +117,7 @@ public class FirstPersonModel : MonoBehaviour
     {
         _moveDir = transform.right * input.x + transform.forward * input.y;
         
-        _rb.MovePosition(transform.position + _moveDir * _moveSpeed * Time.deltaTime);
+        _rb.MovePosition(transform.position + _moveDir * _moveSpeed * _actualSprintModifier * Time.deltaTime);
     }
 
     private void Rotate(Vector2 input)

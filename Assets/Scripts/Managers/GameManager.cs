@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
     #endregion
 
     private BasePlayerModel _basePlayer;

@@ -944,6 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _head: {fileID: 7545660017818230397}
+  _mouseSensitivity: 500
   _lockMode: 1
   _isCursorVisible: 0
   _smoothInputSpeed: 0.2

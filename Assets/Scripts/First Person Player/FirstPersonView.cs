@@ -1,5 +1,3 @@
-using System;
-using TMPro;
 using UnityEngine;
 
 public class FirstPersonView : MonoBehaviour
@@ -25,11 +23,13 @@ public class FirstPersonView : MonoBehaviour
 
     public void SetGroundBool(bool state)
     {
+        _bodyAnimator.SetBool(_groundBoolName, state);
         _handAnimator.SetBool(_groundBoolName, state);
     }
 
     public void CallJumpTrigger()
     {
+        _bodyAnimator.SetTrigger(_jumpTriggerName);
         _handAnimator.SetTrigger(_jumpTriggerName);
     }
 
@@ -38,5 +38,16 @@ public class FirstPersonView : MonoBehaviour
         _bodyAnimator.SetFloat(_xFloatName, input.x);
         _bodyAnimator.SetFloat(_yFloatName, input.y);
         _handAnimator.SetFloat(_moveFloatName, input.magnitude);
+    }
+
+    public void SetTimeScale(float timeScale)
+    {
+        if (timeScale > 1.0f)
+        {
+            timeScale /= 3.0f;
+        }
+        
+        _bodyAnimator.speed = timeScale;
+        _handAnimator.speed = timeScale;
     }
 }

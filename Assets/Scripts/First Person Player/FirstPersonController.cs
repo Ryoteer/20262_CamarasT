@@ -14,6 +14,8 @@ public class FirstPersonController : MonoBehaviour
         _input = new PlayerInputActions();
     }
 
+    #region Enabling
+
     private void OnEnable()
     {
         _input.Enable();
@@ -23,6 +25,8 @@ public class FirstPersonController : MonoBehaviour
         _input.FirstPersonPlayer.Movement.canceled += MoveCancel;
         _input.FirstPersonPlayer.Rotation.performed += RotationAction;
         _input.FirstPersonPlayer.Rotation.canceled += RotationCancel;
+        _input.FirstPersonPlayer.Sprint.performed += SprintAction;
+        _input.FirstPersonPlayer.Sprint.canceled += SprintCancel;
     }
 
     private void OnDisable()
@@ -34,7 +38,12 @@ public class FirstPersonController : MonoBehaviour
         _input.FirstPersonPlayer.Movement.canceled -= MoveCancel;
         _input.FirstPersonPlayer.Rotation.performed -= RotationAction;
         _input.FirstPersonPlayer.Rotation.canceled -= RotationCancel;
+        _input.FirstPersonPlayer.Sprint.canceled -= SprintCancel;
     }
+    
+    #endregion
+
+    #region Actions
 
     private void JumpAction(InputAction.CallbackContext value)
     {
@@ -60,4 +69,16 @@ public class FirstPersonController : MonoBehaviour
     {
         _model.MouseInput = Vector2.zero;
     }
+
+    private void SprintAction(InputAction.CallbackContext value)
+    {
+        _model.IsSprinting = true;
+    }
+
+    private void SprintCancel(InputAction.CallbackContext value)
+    {
+        _model.IsSprinting = false;
+    }
+
+    #endregion
 }
