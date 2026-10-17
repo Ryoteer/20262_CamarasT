@@ -36,7 +36,7 @@ public class FirstPersonModel : MonoBehaviour
     private FirstPersonView _view;
     private Rigidbody _rb;
 
-    private Vector2 _rawInput = new(), _mouseInput = new(), _smoothedInput = new(), _smoothedVelocity = new();
+    private Vector2 _rawInput = new(), _mouseInput = new(), _smoothedInput = new(), _smoothedMouseInput = new(), _smoothedVelocity = new(), _smoothedMouseVelocity;
     public Vector2 RawInput { get { return _rawInput; } set { _rawInput = value; } }
     public Vector2 MouseInput { get { return _mouseInput; } set { _mouseInput = value; } }
 
@@ -64,6 +64,9 @@ public class FirstPersonModel : MonoBehaviour
 
     private void Update()
     {
+        _smoothedInput = Vector2.SmoothDamp(_smoothedInput, _rawInput, ref _smoothedVelocity, _smoothInputSpeed);
+        _smoothedMouseInput = Vector2.SmoothDamp(_smoothedMouseInput, _mouseInput, ref _smoothedMouseVelocity, _smoothInputSpeed);
+        
         if (_isSprinting)
         {
             _actualSprintModifier = _sprintModifier;
@@ -77,10 +80,8 @@ public class FirstPersonModel : MonoBehaviour
         
         if (_mouseInput.x != 0.0f || _mouseInput.y != 0.0f)
         {
-            Rotate(_mouseInput);
+            Rotate(_smoothedMouseInput);
         }
-
-        _smoothedInput = Vector2.SmoothDamp(_smoothedInput, _rawInput, ref _smoothedVelocity, _smoothInputSpeed);
         
         _view.SetMovementValue(_smoothedInput);
         _view.SetGroundBool(_isOnGround);

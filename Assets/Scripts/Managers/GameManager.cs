@@ -37,6 +37,14 @@ public class GameManager : MonoBehaviour
         get { return _firstPersonPlayer; }
         set { _firstPersonPlayer = value; }
     }
+    
+    private ThirdPersonModel _thirdPersonPlayer;
+
+    public ThirdPersonModel ThirdPersonPlayer
+    {
+        get { return _thirdPersonPlayer; }
+        set { _thirdPersonPlayer = value; }
+    }
 
     private void Start()
     {

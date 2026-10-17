@@ -335,6 +335,162 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Third Person Player"",
+            ""id"": ""7262ca82-c9c5-4831-bcc7-67ba328720bc"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""b47bc2de-10c5-4ff7-ba71-8062efa9dcaa"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""83885633-d619-47d5-9df0-0490d57a8590"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""42bdc1ff-7263-4e1a-84c3-a354ae23f07c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""48f526c0-ba2f-4bd8-8abf-fe2a81aefa8c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""4943b273-159f-4273-8712-347cb1f2a39a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""40c03093-2c21-4cda-8a3e-7372dabe855f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""581e0088-81f8-4892-8ebe-56c8c3bf759b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""08c84a8c-8dc4-47cd-91ae-0955a6b9c522"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""2ef04a93-7cd4-4aca-8eca-730bec778fc1"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9599714d-dbee-4b34-bfec-70430f822e72"",
+                    ""path"": ""<Mouse>/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b8dfce62-0dc9-4586-8b79-fb25cb4231ef"",
+                    ""path"": ""<Mouse>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c44191e0-af54-4656-8f55-03515b7e037d"",
+                    ""path"": ""<Mouse>/delta/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""45553a5a-96f6-46a7-9c41-a2d9c3e2f3a9"",
+                    ""path"": ""<Mouse>/delta/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd62fdbb-8556-499a-ad4a-f802473d20b9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -348,12 +504,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_FirstPersonPlayer_Rotation = m_FirstPersonPlayer.FindAction("Rotation", throwIfNotFound: true);
         m_FirstPersonPlayer_Jump = m_FirstPersonPlayer.FindAction("Jump", throwIfNotFound: true);
         m_FirstPersonPlayer_Sprint = m_FirstPersonPlayer.FindAction("Sprint", throwIfNotFound: true);
+        // Third Person Player
+        m_ThirdPersonPlayer = asset.FindActionMap("Third Person Player", throwIfNotFound: true);
+        m_ThirdPersonPlayer_Movement = m_ThirdPersonPlayer.FindAction("Movement", throwIfNotFound: true);
+        m_ThirdPersonPlayer_Rotation = m_ThirdPersonPlayer.FindAction("Rotation", throwIfNotFound: true);
+        m_ThirdPersonPlayer_Jump = m_ThirdPersonPlayer.FindAction("Jump", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         UnityEngine.Debug.Assert(!m_BasePlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.BasePlayer.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_FirstPersonPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.FirstPersonPlayer.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_ThirdPersonPlayer.enabled, "This will cause a leak and performance issues, PlayerInputActions.ThirdPersonPlayer.Disable() has not been called.");
     }
 
     /// <summary>
@@ -650,6 +812,124 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="FirstPersonPlayerActions" /> instance referencing this action map.
     /// </summary>
     public FirstPersonPlayerActions @FirstPersonPlayer => new FirstPersonPlayerActions(this);
+
+    // Third Person Player
+    private readonly InputActionMap m_ThirdPersonPlayer;
+    private List<IThirdPersonPlayerActions> m_ThirdPersonPlayerActionsCallbackInterfaces = new List<IThirdPersonPlayerActions>();
+    private readonly InputAction m_ThirdPersonPlayer_Movement;
+    private readonly InputAction m_ThirdPersonPlayer_Rotation;
+    private readonly InputAction m_ThirdPersonPlayer_Jump;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Third Person Player".
+    /// </summary>
+    public struct ThirdPersonPlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public ThirdPersonPlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "ThirdPersonPlayer/Movement".
+        /// </summary>
+        public InputAction @Movement => m_Wrapper.m_ThirdPersonPlayer_Movement;
+        /// <summary>
+        /// Provides access to the underlying input action "ThirdPersonPlayer/Rotation".
+        /// </summary>
+        public InputAction @Rotation => m_Wrapper.m_ThirdPersonPlayer_Rotation;
+        /// <summary>
+        /// Provides access to the underlying input action "ThirdPersonPlayer/Jump".
+        /// </summary>
+        public InputAction @Jump => m_Wrapper.m_ThirdPersonPlayer_Jump;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_ThirdPersonPlayer; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="ThirdPersonPlayerActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(ThirdPersonPlayerActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="ThirdPersonPlayerActions" />
+        public void AddCallbacks(IThirdPersonPlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="ThirdPersonPlayerActions" />
+        private void UnregisterCallbacks(IThirdPersonPlayerActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ThirdPersonPlayerActions.UnregisterCallbacks(IThirdPersonPlayerActions)" />.
+        /// </summary>
+        /// <seealso cref="ThirdPersonPlayerActions.UnregisterCallbacks(IThirdPersonPlayerActions)" />
+        public void RemoveCallbacks(IThirdPersonPlayerActions instance)
+        {
+            if (m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="ThirdPersonPlayerActions.AddCallbacks(IThirdPersonPlayerActions)" />
+        /// <seealso cref="ThirdPersonPlayerActions.RemoveCallbacks(IThirdPersonPlayerActions)" />
+        /// <seealso cref="ThirdPersonPlayerActions.UnregisterCallbacks(IThirdPersonPlayerActions)" />
+        public void SetCallbacks(IThirdPersonPlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="ThirdPersonPlayerActions" /> instance referencing this action map.
+    /// </summary>
+    public ThirdPersonPlayerActions @ThirdPersonPlayer => new ThirdPersonPlayerActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Base Player" which allows adding and removing callbacks.
     /// </summary>
@@ -700,5 +980,34 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Third Person Player" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="ThirdPersonPlayerActions.AddCallbacks(IThirdPersonPlayerActions)" />
+    /// <seealso cref="ThirdPersonPlayerActions.RemoveCallbacks(IThirdPersonPlayerActions)" />
+    public interface IThirdPersonPlayerActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMovement(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Rotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotation(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnJump(InputAction.CallbackContext context);
     }
 }
